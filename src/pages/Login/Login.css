@@ -1,0 +1,182 @@
+/* Reset e estilos base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Press Start 2P', cursive;
+  background-color: #55468F;
+  color: #fff;
+}
+
+/* Container principal */
+.login-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: #55468F;
+  overflow: auto;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 450px;
+  padding: 30px;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Cabeçalho */
+.login-header {
+  margin-bottom: 30px;
+}
+
+.login-header img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.login-header h1 {
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 0 #000;
+}
+
+/* Formulário */
+.login-form {
+  background-color: #55468F;
+  padding: 25px;
+  border-radius: 0;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.pixel-input {
+  width: 100%;
+  padding: 12px;
+  border: 3px solid #000;
+  background-color: #fff;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  color: #000;
+}
+
+/* Botões - Tamanho fixo 236x43 */
+.button-rpg {
+  width: 236px;
+  height: 43px;
+  padding: 0; /* Removemos o padding para controle preciso do tamanho */
+  margin: 0 auto 15px; /* Centraliza e mantém margem inferior */
+  background-color: #4a4a6a;
+  color: white;
+  border: 3px solid #000;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1; /* Garante que o texto fique centralizado verticalmente */
+}
+
+.button-rpg:hover {
+  background-color: #5a5a7a;
+  transform: translateY(-2px);
+}
+
+.button-rpg:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Botão do Google - Mantém o mesmo tamanho */
+.google-button {
+  background-color: #4285F4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.google-icon {
+  font-weight: bold;
+  background: white;
+  color: #4285F4;
+  padding: 2px 8px;
+  border-radius: 2px;
+}
+
+/* Divisor social */
+.social-divider {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  color: #aaa;
+}
+
+.social-divider::before,
+.social-divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 2px solid #000000;
+}
+
+.social-divider span {
+  padding: 0 10px;
+  font-size: 0.8rem;
+}
+
+/* Opções de login */
+.login-options {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.text-button {
+  background: none;
+  border: none;
+  color: #6e8efb;
+  font-family: inherit;
+  font-size: 0.7rem;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.text-button:hover {
+  color: #8aa4ff;
+}
+
+/* Rodapé */
+.login-footer {
+  margin-top: 30px;
+  font-size: 0.7rem;
+  color: #aaa;
+}
+

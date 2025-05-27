@@ -1,0 +1,45 @@
+.splash-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100vw; /* Garante largura total */
+  margin: 0; /* Remove margens padrão */
+  padding: 20px;
+  box-sizing: border-box;
+  background: #55468F;
+  color: white;
+  text-align: center;
+  position: relative; /* Adicionado para garantir contexto */
+  overflow: hidden; /* Evita barras de rolagem */
+}
+
+/* Garantindo que o HTML e body também ocupem 100% */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Restante do seu CSS permanece igual */
+.splash-gif {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.welcome-text {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  margin-top: 20px;
+  font-weight: 500;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

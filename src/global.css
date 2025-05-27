@@ -1,0 +1,40 @@
+/* Estilo pixel art */
+body {
+  margin: 0;  
+  background-color: #1a1a2e;
+    
+    color: #fff;
+    font-family: 'Press Start 2P', cursive;
+    image-rendering: pixelated;
+  }
+  
+  /* Cores temáticas */
+  :root {
+    --primary: #6C63FF;
+    --secondary: #9292FD;
+    --xp-bar: #4CAF50;
+    --health-bar: #F44336;
+    --coin: #FFD700;
+  }
+  
+  /* Botões estilo RPG */
+  .button-rpg {
+    background-color: var(--primary);
+    border: 4px solid #000;
+    color: white;
+    padding: 10px 20px;
+    font-family: inherit;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px #000;
+    transition: all 0.1s;
+  }
+  
+  .button-rpg:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #000;
+  }
+  
+  .button-rpg:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0px #000;
+  }
