@@ -6,21 +6,40 @@ import Avatar from '../../components/Avatar/Avatar';
 import Pet from '../../components/Pet/Pet';
 import './Dashboard.css';
 
+import defaultCharacter from '../../assets/sprites/Personagem/Guerreira-default.png';
+import defaultPet from '../../assets/sprites/Pet/pet-default.png';
+
 const Dashboard = ({ user }) => {
+  const userData = {
+    level: 1,
+    xp: 50,
+    maxXp: 100,
+    coins: 100,
+    tasksCompletedToday: 3,
+    totalDailyTasks: 5,
+    ...user, // Sobrescreve com props se existirem
+    avatarImg: user?.avatarImg || defaultCharacter,
+    pet: {
+      image: defaultPet,
+      name: "Mascote",
+      level: 1,
+      ...user?.pet
+    }
+  };
+
   return (
     <div className="dashboard-page">
-      
       <main className="dashboard-content">
         <div className="dashboard-grid">
           {/* Seção do Personagem */}
-          <section className="character-panel">
+          <section className="character-panel pixel-border">
             <div className="character-info">
-              <h2 className="character-title">Seu Aventureiro</h2>
+              <h2 className="character-title">Seu Aventureiro </h2>
                 
               <div className="character-stats">
                 <div className="stat-item">
                   <span className="stat-label">Nível</span>
-                  <span className="stat-value">{user.level}</span>
+                  <span className="stat-value">{userData.level}</span>
                 </div>
                 
                 <div className="stat-item">
@@ -29,10 +48,10 @@ const Dashboard = ({ user }) => {
                     <div className="xp-bar">
                       <div 
                         className="xp-progress" 
-                        style={{ width: `${(user.xp / user.maxXp) * 100}%` }}
+                        style={{ width: `${(userData.xp / userData.maxXp) * 100}%` }}
                       ></div>
                     </div>
-                    <span className="xp-text">{user.xp}/{user.maxXp}</span>
+                    <span className="xp-text">{userData.xp}/{userData.maxXp}</span>
                   </div>
                 </div>
                 
@@ -40,7 +59,7 @@ const Dashboard = ({ user }) => {
                   <span className="stat-label">Moedas</span>
                   <span className="stat-value coins">
                     <span className="coin-icon">🪙</span>
-                    {user.coins || 0}
+                    {userData.coins || 0}
                   </span>
                 </div>
               </div>
@@ -48,11 +67,19 @@ const Dashboard = ({ user }) => {
             
             <div className="character-display">
               <img 
-                src={user.avatarImg} 
+                src={userData.avatarImg} 
                 alt="Personagem" 
                 className="pixel-art character-sprite" 
               />
-              <Pet pet={user.pet} />
+              <div className="pet-container">
+                <img 
+                  src={userData.pet.image} 
+                  alt={userData.pet.name} 
+                  className="pixel-art pet-sprite" 
+                />
+                <span className="pet-name">{userData.pet.name}</span>
+                <span className="pet-level">Nv. {userData.pet.level}</span>
+              </div>
             </div>
           </section>
 
@@ -67,6 +94,11 @@ const Dashboard = ({ user }) => {
               <span className="button-icon">🛒</span>
               <span className="button-text">Loja</span>
             </Link>
+            
+            <Link to="/inventory" className="action-button pixel-button">
+              <span className="button-icon">🎒</span>
+              <span className="button-text">Inventário</span>
+            </Link>
           </section>
 
           {/* Seção de Progresso */}
@@ -76,17 +108,16 @@ const Dashboard = ({ user }) => {
               <div className="progress-bar">
                 <div 
                   className="progress-fill" 
-                  style={{ width: `${(user.tasksCompletedToday / user.totalDailyTasks) * 100}%` }}
+                  style={{ width: `${(userData.tasksCompletedToday / userData.totalDailyTasks) * 100}%` }}
                 ></div>
               </div>
               <p className="progress-text">
-                {user.tasksCompletedToday} de {user.totalDailyTasks} tarefas completadas
+                {userData.tasksCompletedToday} de {userData.totalDailyTasks} tarefas completadas
               </p>
             </div>
           </section>
         </div>
       </main>
-
     </div>
   );
 };
