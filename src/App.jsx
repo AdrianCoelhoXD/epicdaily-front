@@ -7,6 +7,9 @@ import Tasks from './pages/Tasks/Tasks'
 import Shop from './pages/Shop/Shop'
 import SplashScreen from './pages/SplashScreen/SplashScreen';
 import Profile from './pages/Profile/Profile'; 
+import Inventory from './pages/Inventary/Inventary'
+
+
 import Header from './components/UI/Header/Header'; 
 import Footer from './components/UI/Footer/Footer';
 
@@ -24,6 +27,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard user={user} />} />
           <Route path="/tasks" element={<Tasks user={user} />} />
           <Route path="/shop" element={<Shop user={user} />} />
+          <Route path="/inventory" element={<Inventory user={user} />} />
           <Route path="/profile" element={<Profile user={user} setUser={setUser} />} />
         </Routes>
         {user && <Footer />} 

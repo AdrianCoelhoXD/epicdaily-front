@@ -9,7 +9,7 @@ const SplashScreen = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       navigate('/login'); // Redireciona para a página de login
-    }, 1000); // Define o tempo 10 segundos
+    }, 100); // Define o tempo 10 segundos
 
     return () => clearTimeout(timer); 
   }, [navigate]);

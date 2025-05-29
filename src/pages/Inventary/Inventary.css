@@ -1,0 +1,97 @@
+.inventory-page {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.inventory-title {
+  color: #6C63FF;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 0 #000;
+}
+
+.inventory-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+.equipped-section, .items-section {
+  background-color: #2c3e50;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.equipped-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.equipped-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.empty-slot {
+  width: 100px;
+  height: 100px;
+  border: 2px dashed #7f8c8d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7f8c8d;
+  margin-top: 0.5rem;
+}
+
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.item-card {
+  background-color: #34495e;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.item-card:hover {
+  transform: translateY(-5px);
+}
+
+.item-card img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.item-info {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.item-info h3 {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.item-info p {
+  font-size: 0.8rem;
+  color: #bdc3c7;
+}
+
+.use-button {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+}
