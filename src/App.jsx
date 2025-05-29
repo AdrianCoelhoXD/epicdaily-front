@@ -8,7 +8,7 @@ import Shop from './pages/Shop/Shop'
 import SplashScreen from './pages/SplashScreen/SplashScreen';
 import Profile from './pages/Profile/Profile'; 
 import Inventory from './pages/Inventary/Inventary'
-
+import Achievements from './pages/Achievements/Achievements';
 
 import Header from './components/UI/Header/Header'; 
 import Footer from './components/UI/Footer/Footer';
@@ -29,6 +29,9 @@ function App() {
           <Route path="/shop" element={<Shop user={user} />} />
           <Route path="/inventory" element={<Inventory user={user} />} />
           <Route path="/profile" element={<Profile user={user} setUser={setUser} />} />
+          <Route path="/achievements" element={<Achievements user = {user}setUser={setUser} />} />
+
+
         </Routes>
         {user && <Footer />} 
       </div>
