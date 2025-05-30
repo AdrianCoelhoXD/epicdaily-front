@@ -37,7 +37,7 @@ const Login = ({ setUser }) => {
 
         {isLoginView ? (
           <>
-            <form onSubmit={handleSubmit} className="login-form pixel-border">
+            <form onSubmit={handleSubmit} className="login-form ">
               <div className="input-group">
                 <label htmlFor="email">E-mail:</label>
                 <input
@@ -47,6 +47,7 @@ const Login = ({ setUser }) => {
                   value={formData.email}
                   onChange={handleChange}
                   className="pixel-input"
+                  placeholder='Digite seu e-mail'
                   required
                 />
               </div>
@@ -60,6 +61,7 @@ const Login = ({ setUser }) => {
                   value={formData.password}
                   onChange={handleChange}
                   className="pixel-input"
+                  placeholder='Digite sua senha'
                   required
                 />
               </div>
@@ -96,7 +98,7 @@ const Login = ({ setUser }) => {
             </div>
           </>
         ) : (
-          <form onSubmit={handleSubmit} className="login-form pixel-border">
+          <form onSubmit={handleSubmit} className="login-form ">
             <div className="input-group">
               <label htmlFor="reg-email">E-mail:</label>
               <input
@@ -104,6 +106,7 @@ const Login = ({ setUser }) => {
                 id="reg-email"
                 name="email"
                 className="pixel-input"
+                placeholder='Digite seu e-mail'
                 required
               />
             </div>
@@ -115,6 +118,7 @@ const Login = ({ setUser }) => {
                 id="reg-password"
                 name="password"
                 className="pixel-input"
+                placeholder='Digite sua senha'
                 required
               />
             </div>
@@ -126,6 +130,7 @@ const Login = ({ setUser }) => {
                 id="reg-confirm"
                 name="confirmPassword"
                 className="pixel-input"
+                placeholder='Confirme sua senha'
                 required
               />
             </div>

@@ -1,4 +1,3 @@
-/* Reset e estilos base */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -29,12 +28,16 @@ html, body {
 }
 
 .login-container {
+  border: 3px solid #6C63FF;
   width: 100%;
   max-width: 450px;
   padding: 30px;
   text-align: center;
   margin: 0 auto;
   position: relative;
+  border-radius: 0;
+  background-color: #55468F;
+  box-shadow: 4px 4px 0 #3A2F6B; 
 }
 
 /* Cabeçalho */
@@ -87,8 +90,8 @@ html, body {
 .button-rpg {
   width: 236px;
   height: 43px;
-  padding: 0; /* Removemos o padding para controle preciso do tamanho */
-  margin: 0 auto 15px; /* Centraliza e mantém margem inferior */
+  padding: 0; 
+  margin: 0 auto 15px; 
   background-color: #4a4a6a;
   color: white;
   border: 3px solid #000;
@@ -99,7 +102,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  line-height: 1; /* Garante que o texto fique centralizado verticalmente */
+  line-height: 1; 
 }
 
 .button-rpg:hover {
@@ -179,4 +182,3 @@ html, body {
   font-size: 0.7rem;
   color: #aaa;
 }
-
