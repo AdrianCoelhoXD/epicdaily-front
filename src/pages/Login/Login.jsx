@@ -136,7 +136,7 @@ const Login = ({ setUser }) => {
             </div>
 
             <button type="submit" className="button-rpg">
-              Criar Personagem
+              Registrar
             </button>
 
             <div className="login-options">

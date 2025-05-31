@@ -14,8 +14,8 @@ const Dashboard = ({ user }) => {
     level: 1,
     xp: 50,
     maxXp: 100,
-    coins: 100,
-    tasksCompletedToday: 3,
+    coins: 500,
+    tasksCompletedToday: 1,
     totalDailyTasks: 5,
     ...user, // Sobrescreve com props se existirem
     avatarImg: user?.avatarImg || defaultCharacter,
