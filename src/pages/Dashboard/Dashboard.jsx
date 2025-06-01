@@ -8,6 +8,11 @@ import './Dashboard.css';
 
 import defaultCharacter from '../../assets/sprites/Personagem/Guerreira-default.png';
 import defaultPet from '../../assets/sprites/Pet/pet-default.png';
+import scrollQuest from '../../assets/sprites/scroll-quest.png';
+import potionStore from '../../assets/sprites/potion.png';
+import inventaryChest from '../../assets/sprites/treasure-chest.png';
+
+
 
 const Dashboard = ({ user }) => {
   const userData = {
@@ -17,7 +22,7 @@ const Dashboard = ({ user }) => {
     coins: 500,
     tasksCompletedToday: 1,
     totalDailyTasks: 5,
-    ...user, // Sobrescreve com props se existirem
+    ...user, 
     avatarImg: user?.avatarImg || defaultCharacter,
     pet: {
       image: defaultPet,
@@ -86,17 +91,24 @@ const Dashboard = ({ user }) => {
           {/* Seção de Ações */}
           <section className="dashboard-actions">
             <Link to="/tasks" className="action-button pixel-button">
-              <span className="button-icon">🎯</span>
+              <span className="button-icon">
+              <img src={scrollQuest} alt="Scroll de Quest" />
+
+              </span>
               <span className="button-text">Missões</span>
             </Link>
             
             <Link to="/shop" className="action-button pixel-button">
-              <span className="button-icon">🛒</span>
+              <span className="button-icon">
+              <img src={potionStore} alt="Loja de porçôes" />
+              </span>
               <span className="button-text">Loja</span>
             </Link>
             
             <Link to="/inventory" className="action-button pixel-button">
-              <span className="button-icon">🎒</span>
+              <span className="button-icon">
+              <img src={inventaryChest} alt="Inventario de bau do tesouro" />
+              </span>
               <span className="button-text">Inventário</span>
             </Link>
           </section>

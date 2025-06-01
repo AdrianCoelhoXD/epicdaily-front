@@ -16,21 +16,21 @@ const Footer = () => {
           <h3 className="footer-title">Social Media</h3>
           <div className="social-icons">
             <button 
-              onClick={() => openExternalLink('https://github.com/seu-usuario')}
+              onClick={() => openExternalLink('https://github.com/AdrianCoelhoXD/epicdaily-front')}
               aria-label="GitHub"
               className="social-icon"
             >
               <FaGithub />
             </button>
             <button 
-              onClick={() => openExternalLink('https://twitter.com/seu-usuario')}
+              onClick={() => openExternalLink('https://grok.com/')}
               aria-label="Twitter"
               className="social-icon"
             >
               <FaTwitter />
             </button>
             <button 
-              onClick={() => openExternalLink('https://discord.gg/seu-link')}
+              onClick={() => openExternalLink('https://discord.gg/3XuPFDupw5')}
               aria-label="Discord"
               className="social-icon"
             >

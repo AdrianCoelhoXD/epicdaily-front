@@ -203,11 +203,21 @@
   background-color: #2980b9;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
-
 .button-icon {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
+  display: inline-flex;       /* Para melhor alinhamento */
+  align-items: center;        /* Centraliza verticalmente */
+  justify-content: center;    /* Centraliza horizontalmente */
 }
+
+/* Estilo para as imagens dentro do button-icon */
+.button-icon img {
+  width: 1em;                 /* Usa o tamanho da fonte do container (2.5rem) */
+  height: 1em;                /* Mantém proporção quadrada */
+  object-fit: contain;        /* Garante que a imagem não distorça */
+}
+
 
 .button-text {
   font-size: 0.9rem;
