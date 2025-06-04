@@ -2,17 +2,16 @@ import React from 'react'
 import '../Inventary/Inventary.css'
 
 const Inventory = ({ user }) => {
-  // Itens mockados - você pode substituir pelos itens do usuário
   const inventoryItems = [
-    { id: 1, name: 'Espada de Ferro', type: 'weapon', quantity: 1, image: '/assets/items/sword.png' },
-    { id: 2, name: 'Poção de Cura', type: 'potion', quantity: 3, image: '/assets/items/potion.png' },
-    { id: 3, name: 'Armadura de Couro', type: 'armor', quantity: 1, image: '/assets/items/armor.png' },
-    { id: 4, name: 'Pergaminho de Fogo', type: 'scroll', quantity: 2, image: '/assets/items/scroll.png' },
+    { id: 1, name: 'Espada de Encantada', type: 'weapon', quantity: 1, image: 'src/assets/sprites/Inventario/Enchanted_Iron_Sword.gif' },
+    { id: 2, name: 'Poção de Cura', type: 'potion', quantity: 3, image: 'src/assets/sprites/Inventario/potion-i-bg.png' },
+    { id: 3, name: 'Filhote de pet', type: 'animal', quantity: 1, image: 'src/assets/sprites/Pet/pet-default.png'},
+    { id: 4, name: 'Baú Lendário', type: 'chest', quantity: 2, image: 'src/assets/sprites/Inventario/Bau.png' },
   ]
 
   const equippedItems = {
-    weapon: 'Espada de Ferro',
-    armor: 'Armadura de Couro',
+    weapon: 'Espada Elfica',
+    armor: 'Coroa do rei',
     accessory: null
   }
 
@@ -29,7 +28,7 @@ const Inventory = ({ user }) => {
               <h3>Arma</h3>
               {equippedItems.weapon ? (
                 <div className="item-card">
-                  <img src="/assets/items/sword.png" alt={equippedItems.weapon} />
+                  <img src="src/assets/sprites/Inventario/sword.png" alt={equippedItems.weapon} />
                   <span>{equippedItems.weapon}</span>
                 </div>
               ) : (
@@ -41,7 +40,7 @@ const Inventory = ({ user }) => {
               <h3>Armadura</h3>
               {equippedItems.armor ? (
                 <div className="item-card">
-                  <img src="/assets/items/armor.png" alt={equippedItems.armor} />
+                  <img src="src/assets/sprites/Inventario/coroa.png" alt={equippedItems.armor} />
                   <span>{equippedItems.armor}</span>
                 </div>
               ) : (

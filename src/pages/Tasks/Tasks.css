@@ -1,48 +1,251 @@
-/* src/styles/tasks.css */
+/* Estilos base */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+  background-color: #121220;
+  color: #fff;
+  font-family: 'Courier New', monospace;
+}
+
+/* Container principal */
 .tasks-container {
-    padding: 20px;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  .tasks-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .task-card {
-    background-color: #2a2a3a;
-    padding: 15px;
-    margin-bottom: 15px;
-    border: 4px solid #000;
-  }
-  
-  .task-card.completed {
-    opacity: 0.7;
-    border-color: #4CAF50;
-  }
-  
-  .task-header {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .difficulty {
-    color: #FFD700;
-  }
-  
-  .task-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
-  }
-  
-  .complete-btn {
-    background-color: #6C63FF;
-    padding: 5px 10px;
-    font-size: 0.8rem;
-  }
-  
+  padding: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #1e1e2e;
+  border: 4px solid #3a3a4a;
+  box-shadow: 0 0 0 4px #6C63FF, 0 0 10px rgba(108, 99, 255, 0.5);
+  position: relative;
+}
+
+.tasks-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #6C63FF, #FFD700, #6C63FF);
+}
+
+/* Cabeçalho */
+.tasks-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #2a2a3a;
+  border: 3px solid #3a3a4a;
+  position: relative;
+}
+
+.tasks-header h1 {
+  color: #FFD700;
+  text-shadow: 2px 2px 0 #000;
+  margin: 0;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.5rem;
+}
+
+.stats {
+  display: flex;
+  gap: 10px;
+}
+
+.stats span {
+  background-color: #3a3a4a;
+  padding: 5px 10px;
+  border: 2px solid #000;
+  color: #FFD700;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+}
+
+/* Barra de XP */
+.xp-bar-container {
+  width: 100%;
+  height: 20px;
+  background-color: #3a3a4a;
+  border: 2px solid #000;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.xp-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #6C63FF, #FFD700);
+  transition: width 0.5s ease;
+}
+
+.xp-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 0.7rem;
+  text-shadow: 1px 1px 0 #000;
+}
+
+/* Categorias */
+.tasks-categories {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+/* Cartão de tarefa */
+.task-card {
+  background-color: #2a2a3a;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 4px solid #3a3a4a;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+}
+
+.task-card.completed {
+  opacity: 0.7;
+  border-color: #4CAF50;
+  background-color: rgba(76, 175, 80, 0.1);
+}
+
+.task-card.completed::after {
+  content: "✓";
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #4CAF50;
+  color: white;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border: 2px solid white;
+}
+
+/* Cabeçalho da tarefa */
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.task-header h3 {
+  color: #6C63FF;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.difficulty {
+  color: #FFD700;
+  font-size: 1rem;
+}
+
+/* Descrição da tarefa */
+.task-description {
+  color: #ccc;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+/* Meta da tarefa */
+.task-meta {
+  margin-bottom: 10px;
+}
+
+.task-category {
+  display: inline-block;
+  background-color: #3a3a4a;
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  color: #FFD700;
+}
+
+/* Rodapé da tarefa */
+.task-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.rewards {
+  display: flex;
+  gap: 15px;
+}
+
+.xp-reward {
+  color: #6C63FF;
+  font-weight: bold;
+}
+
+.coin-reward {
+  color: #FFD700;
+  font-weight: bold;
+}
+
+/* Botões */
+.button-rpg {
+  background-color: #6C63FF;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7rem;
+  cursor: pointer;
+  position: relative;
+  border: 2px solid #4a4a5a;
+  box-shadow: 3px 3px 0 #4a4a5a;
+  transition: all 0.2s ease;
+}
+
+.button-rpg:hover {
+  background-color: #5a53e0;
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 #4a4a5a;
+}
+
+.button-rpg:active {
+  transform: translate(3px, 3px);
+  box-shadow: none;
+}
+
+.button-rpg.small {
+  padding: 5px 10px;
+  font-size: 0.6rem;
+}
+
+.button-rpg.active {
+  background-color: #FFD700;
+  color: #000;
+}
+
+.complete-btn {
+  background-color: #6C63FF;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+}
+
+/* Adicionar nova tarefa */
+.add-task {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.add-task .button-rpg {
+  padding: 10px 20px;
+  font-size: 0.8rem;
+}

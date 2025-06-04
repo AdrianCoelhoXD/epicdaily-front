@@ -1,4 +1,3 @@
-// src/pages/Shop/Shop.jsx
 import React, { useState } from 'react'
 import '../Shop/Shop.css'
 
@@ -7,17 +6,19 @@ const Shop = ({ user }) => {
   
   const shopItems = {
     avatar: [
-      { id: 1, name: 'Capacete de Aço', price: 50, type: 'head', image: '/assets/shop/helmet.png' },
-      { id: 2, name: 'Armadura Dourada', price: 100, type: 'body', image: '/assets/shop/armor.png' },
-      { id: 3, name: 'Botas Velozes', price: 40, type: 'feet', image: '/assets/shop/boots.png' }
+      { id: 1, name: 'Disponivel em breve', price: 0, image: 'src/assets/sprites/Loja/embreve.png' },
+      { id: 2, name: 'Disponivel em breve', price: 0, image: 'src/assets/sprites/Loja/embreve.png' },
+      { id: 3, name: 'Disponivel em breve', price: 0, image: 'src/assets/sprites/Loja/embreve.png' },
+      { id: 4, name: 'Disponivel em breve', price: 0, image: 'src/assets/sprites/Loja/embreve.png' },
+
+      
     ],
     pet: [
-      { id: 4, name: 'Chapéu de Festa', price: 30, type: 'pet-hat', image: '/assets/shop/party-hat.png' },
-      { id: 5, name: 'Coleira Brilhante', price: 25, type: 'pet-collar', image: '/assets/shop/collar.png' }
+      { id: 5, name: 'Chicken Cleide', price: 25, type:'animal', image: 'src/assets/sprites/Loja/galinha-pet.png' },
+      { id: 6, name: 'Dog Ralf', price: 100, type:'animal', image: 'src/assets/sprites/Loja/dog-removebg-preview.png' },
     ],
     consumables: [
-      { id: 6, name: 'Poção de XP', price: 20, type: 'xp-potion', image: '/assets/shop/xp-potion.png' },
-      { id: 7, name: 'Doce para Pet', price: 15, type: 'pet-treat', image: '/assets/shop/treat.png' }
+      { id: 6, name: 'Poção de vida', price: 20, type: 'life-potion', image: 'src/assets/sprites/Inventario/potion-i-bg.png' },
     ]
   }
 
@@ -25,7 +26,7 @@ const Shop = ({ user }) => {
     // Lógica para comprar item
     if (user.coins >= item.price) {
       alert(`Você comprou ${item.name}!`)
-      // Aqui você subtrairia as moedas e adicionaria o item ao inventário
+      // Subtrairia as moedas e adicionaria o item ao inventário
     } else {
       alert('Moedas insuficientes!')
     }
@@ -37,7 +38,8 @@ const Shop = ({ user }) => {
         <h1>Loja do Aventureiro</h1>
         <div className="coins-display">
           <span className="coins-amount">{user?.coins || 0}</span>
-          <img src="/assets/shop/coin.png" alt="Moedas" className="coin-icon" />
+          <img src="src/assets/sprites/Loja/Moeda.png" alt="Moedas" className="coin-icon" />
+          <p>Moedas atuais</p>
         </div>
       </header>
 
@@ -69,7 +71,7 @@ const Shop = ({ user }) => {
             <h3 className="item-name">{item.name}</h3>
             <div className="item-price">
               <span>{item.price}</span>
-              <img src="/assets/shop/coin.png" alt="Moedas" className="coin-icon" />
+              <img src="src/assets/sprites/Loja/Moeda.png" alt="Moedas" className="coin-icon" />
             </div>
             <button 
               className="button-rpg buy-btn"

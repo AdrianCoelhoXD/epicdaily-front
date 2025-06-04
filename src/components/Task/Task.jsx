@@ -1,4 +1,3 @@
-// src/components/Task/Task.jsx
 import React from 'react'
 
 const Task = ({ task, onComplete }) => {
@@ -11,10 +10,13 @@ const Task = ({ task, onComplete }) => {
         <span className="difficulty">{difficultyStars}</span>
       </div>
       <p className="task-description">{task.description}</p>
+      <div className="task-meta">
+        <span className="task-category">{task.category}</span>
+      </div>
       <div className="task-footer">
         <div className="rewards">
           <span className="xp-reward">+{task.xp} XP</span>
-          <span className="coin-reward">{task.coins} Moedas</span>
+          <span className="coin-reward">+{task.coins} Moedas</span>
         </div>
         {!task.completed && (
           <button 

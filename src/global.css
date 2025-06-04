@@ -5,17 +5,36 @@ body {
     
     color: #fff;
     font-family: 'Press Start 2P', cursive;
-    image-rendering: pixelated;
   }
   
   /* Cores temáticas */
-  :root {
-    --primary: #6C63FF;
-    --secondary: #9292FD;
-    --xp-bar: #4CAF50;
-    --health-bar: #F44336;
-    --coin: #FFD700;
-  }
+:root {
+  --primary: #6C63FF;
+  --secondary: #9292FD;
+  --xp-bar: #4CAF50;
+  --health-bar: #F44336;
+  --coin: #FFD700;
+  --background: #1a1a2e;
+  --card-bg: #2c3e50;
+  --border-color: #34495e;
+  --text-primary: #ecf0f1;
+  --text-secondary: #bdc3c7;
+  --accent: #f39c12;
+  
+  font-family: 'Press Start 2P', cursive;
+
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
   
   /* Botões estilo RPG */
   .button-rpg {
@@ -38,3 +57,5 @@ body {
     transform: translate(4px, 4px);
     box-shadow: 0px 0px 0px #000;
   }
+
+  
